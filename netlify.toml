@@ -1,0 +1,4 @@
+[build]
+    command = "yarn build"
+    publish = "sens-salonki/public"
+    base = "sens-salonki"
