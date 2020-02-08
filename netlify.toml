@@ -1,4 +1,4 @@
 [build]
-    command = "yarn build"
-    publish = "sens-salonki/public"
+    command = "npm run build"
+    publish = "public"
     base = "sens-salonki"
