@@ -1,11 +1,7 @@
 .App {
   text-align: center;
 }
-.App-panel {
-  animation-name: App-logo-spin;
-  border-radius:20px;
-  background-color: rgba(150, 61, 61, 0.568);
-}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

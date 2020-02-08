@@ -11,9 +11,9 @@ class SensorTable extends Component{
     };
 
     async fetchSensors() {
-        const response = await fetch('/api/reading')
+        const response = await fetch('/api/reading');
         const data: Sensor[] = await response.json();
-        this.setState({data})
+        this.setState({data});
     }
 
     componentDidMount(){
@@ -23,9 +23,6 @@ class SensorTable extends Component{
 
     }
 
-    formatDate(date: string): string{
-        return new Date(date).toLocaleDateString('fi-FI');
-    }
 
     render(){
         const {data} = this.state;
