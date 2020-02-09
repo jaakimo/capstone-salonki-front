@@ -2,7 +2,7 @@
   "name": "sens-salonki",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://capstonesalonki.netlify.com/",
+  "homepage": "http://cssalonki.netlify.com/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -38,5 +38,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy":"http://capstonesalonki.herokuapp.com/"
 }
