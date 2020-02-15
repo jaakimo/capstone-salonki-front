@@ -1,4 +1,11 @@
 [build]
-    command = "npm run build"
-    publish = "public"
+    command = "yarn build"
+    publish = "build"
     base = "sens-salonki"
+
+[[redirects]]
+  from = "/api/reading"
+  to = "http://capstonesalonki.herokuapp.com/api/reading"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
