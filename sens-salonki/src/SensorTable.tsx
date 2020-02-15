@@ -11,7 +11,7 @@ class SensorTable extends Component{
     };
 
     async fetchSensors() {
-        const response = await fetch('/api/reading');
+        const response = await fetch('http://capstonesalonki.herokuapp.com/api/reading');
         const data: Sensor[] = await response.json();
         this.setState({data});
     }
