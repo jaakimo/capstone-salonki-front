@@ -1,5 +1,0 @@
-[build]
-    command = "yarn build"
-    publish = "build"
-    base = "sens-salonki"
-
