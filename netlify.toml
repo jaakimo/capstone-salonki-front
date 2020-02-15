@@ -3,9 +3,3 @@
     publish = "build"
     base = "sens-salonki"
 
-[[redirects]]
-  from = "/*"
-  to = "/"
-  status = 200
-  force = true
-  headers = {X-From = "Netlify"}
