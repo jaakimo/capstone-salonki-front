@@ -4,8 +4,12 @@
     base = ""
 
 [[redirects]]
-  from = "/api/reading"
-  to = "http://capstonesalonki.herokuapp.com/api/reading"
+  from = "/*"
+  to = "/"
+
+[[redirects]]
+  from = "/api/*"
+  to = "http://capstonesalonki.herokuapp.com/api/"
   status = 200
   force = true
   headers = {X-From = "Netlify"}
