@@ -5,7 +5,7 @@ interface State {
     data: Sensor[]
 }
 
-class SensorTable extends Component{
+class SensorTable extends Component<{}, State>{
     state = {
         data: []
     };

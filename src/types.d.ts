@@ -4,5 +4,7 @@ interface Sensor {
     co2: string,
     temperature: string,
     pressure: string,
-    humidity: string
+    humidity: string,
+    lat: string,
+    lng: string
 }
