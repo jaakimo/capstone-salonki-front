@@ -38,18 +38,22 @@ class SensorTable extends Component<{}, State>{
                     <th>Lämpötila (°C)</th>
                     <th>Ilmanpaine (kPa)</th>
                     <th>Ilmankosteus (%)</th>
+                    <th>Pituuspiiri</th>
+                    <th>Leveyspiiri</th>
                 </thead>
                 <tbody>
                 
                 {
-                    data.map(({sensor, ga, gb ,gx ,gy ,gz }) => (
+                    data.map(({sensor, ga, gb ,gx ,gy ,gz,lat,lng }) => (
                         <tr key={sensor}>
                             <td>{sensor}</td>  
                             <td>{ga}</td>
                             <td>{gb}</td>
                             <td>{gx}</td>
                             <td>{gy}</td>
-                            <td>{gz} </td>
+                            <td>{gz}</td>
+                            <td>{lat}</td>
+                            <td>{lng}</td>
                         </tr>
                     ))
                 }
