@@ -1,66 +1,49 @@
-import React, {Component} from 'react';
-import {Table} from 'react-bootstrap';
+import React, { Component } from 'react';
+import { Table } from 'react-bootstrap'
 
-interface State {
-    data: Sensor[]
+interface Props {
+  isLoading: boolean,
+  data: Sensor[],
+  error: any
 }
 
-class SensorTable extends Component<{}, State>{
-    state = {
-        data: []
-    };
+const SensorTable = ({ isLoading, data, error }: Props) => (
+  <Table>
 
-    async fetchSensors() {
-        const response = await fetch('/api/reading');
-        const data: Sensor[] = await response.json();
-        this.setState({data});
+    {
+      error ? error : (
+        <>
+          <thead>
+            <th>Nimi</th>
+            <th>TVOC (ppm)</th>
+            <th>Co2 (ppm)</th>
+            <th>Lämpötila (°C)</th>
+            <th>Ilmanpaine (kPa)</th>
+            <th>Ilmankosteus (%)</th>
+            <th>Pituuspiiri</th>
+            <th>Leveyspiiri</th>
+          </thead>
+          <tbody>
+            {
+              data.map(({ sensor, gx, gy, gz, ga, gb, lat, lng }) => (
+                <tr key={sensor}>
+                  <td>{sensor}</td>
+                  <td>{gx}</td>
+                  <td>{gy}</td>
+                  <td>{gz}</td>
+                  <td>{ga}</td>
+                  <td>{gb}</td>
+                  <td>{lat}</td>
+                  <td>{lng}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </>
+
+      )
     }
-
-    componentDidMount(){
-
-        this.fetchSensors();
-        setInterval(this.fetchSensors.bind(this),5000)
-
-    }
-
-
-    render(){
-        const {data} = this.state;
-        if (data.length === 0 ){
-            return 'Ladataan sensoreita'
-        }
-        return(
-            <Table striped bordered hover>
-                <thead>
-                    <th>Nimi</th>
-                    <th>TVOC (ppm)</th>
-                    <th>Co2 (ppm)</th>
-                    <th>Lämpötila (°C)</th>
-                    <th>Ilmanpaine (kPa)</th>
-                    <th>Ilmankosteus (%)</th>
-                    <th>Pituuspiiri</th>
-                    <th>Leveyspiiri</th>
-                </thead>
-                <tbody>
-                
-                {
-                    data.map(({sensor, ga, gb ,gx ,gy ,gz,lat,lng }) => (
-                        <tr key={sensor}>
-                            <td>{sensor}</td>  
-                            <td>{ga}</td>
-                            <td>{gb}</td>
-                            <td>{gx}</td>
-                            <td>{gy}</td>
-                            <td>{gz}</td>
-                            <td>{lat}</td>
-                            <td>{lng}</td>
-                        </tr>
-                    ))
-                }
-                </tbody>
-            </Table>
-        );
-    }
-}
+  </Table>
+);
 
 export default SensorTable;

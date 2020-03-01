@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height:100%
 }
 
 .App-logo {
@@ -36,7 +37,15 @@
     transform: rotate(360deg);
   }
 }
+
+.App-div{
+  position: static;
+  top:15px;
+  height:10vh;
+  z-index: 10;
+}
+
+
 .leaflet-container{
-  width:800px;
-  height:800px;
+  height: 90vh;
 }

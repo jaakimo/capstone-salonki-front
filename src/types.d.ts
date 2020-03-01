@@ -1,10 +1,10 @@
 interface Sensor {
-    name: string,
-    tvoc: string,
-    co2: string,
-    temperature: string,
-    pressure: string,
-    humidity: string,
-    lat: string,
-    lng: string
+    sensor: string,
+    gx: number,
+    gy: number,
+    gz: number,
+    ga: number,
+    gb: number,
+    lat: number,
+    lng: number
 }
