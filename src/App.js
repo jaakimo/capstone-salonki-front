@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { Navbar, Nav} from 'react-bootstrap'
 
 import './App.css';
-import { Navbar, Nav} from 'react-bootstrap'
 import SensorTable from './SensorTable'
 import SensorMap from './SensorMap';
 import ParkMap from './ParkMap';
