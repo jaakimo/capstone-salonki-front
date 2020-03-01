@@ -27,14 +27,14 @@ const SensorTable = ({ isLoading, data, error }) => (
           </thead>
           <tbody>
             {
-              data.map(({ sensor, gx, gy, gz, ga, gb, lat, lng }) => (
+              data.map(({ sensor, ga, gb, gx, gy, gz, lat, lng }) => (
                 <tr key={sensor}>
                   <td>{sensor}</td>
+                  <td>{ga}</td>
+                  <td>{gb}</td>
                   <td>{gx}</td>
                   <td>{gy}</td>
                   <td>{gz}</td>
-                  <td>{ga}</td>
-                  <td>{gb}</td>
                   <td>{lat}</td>
                   <td>{lng}</td>
                 </tr>
