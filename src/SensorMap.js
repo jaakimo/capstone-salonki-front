@@ -1,22 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 
 
-interface Props {
-    isLoading: boolean,
-    data: Sensor[],
-    error: any
+// interface Props {
+//   isLoading: boolean,
+//   data: Sensor[],
+//   error: any
+// }
 
-}
 const init = {
     lat: 60.3846,
     lng: 23.1286377,
     zoom: 13
 }
 
-
-
-const SensorMap = ({ isLoading, data, error }: Props) => (
+const SensorMap = ({ isLoading, data, error }) => (
 
     <Map  center={[init.lat, init.lng]} zoom={init.zoom} >
         {

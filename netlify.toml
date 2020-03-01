@@ -10,3 +10,10 @@
   status = 200
   force = true
   headers = {X-From = "Netlify"}
+
+  [[redirects]]
+  from = "/api/park"
+  to = "http://capstonesalonki.herokuapp.com/api/park"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}

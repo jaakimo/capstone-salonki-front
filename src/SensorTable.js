@@ -1,17 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Table } from 'react-bootstrap'
 
-interface Props {
-  isLoading: boolean,
-  data: Sensor[],
-  error: any
-}
+// interface Props {
+//   isLoading: boolean,
+//   data: Sensor[],
+//   error: any
+// }
 
-const SensorTable = ({ isLoading, data, error }: Props) => (
+const SensorTable = ({ isLoading, data, error }) => (
   <Table>
 
     {
       error ? error : (
+        
+      isLoading ? isLoading: (
         <>
           <thead>
             <th>Nimi</th>
@@ -41,7 +43,7 @@ const SensorTable = ({ isLoading, data, error }: Props) => (
           </tbody>
         </>
 
-      )
+      ))
     }
   </Table>
 );
