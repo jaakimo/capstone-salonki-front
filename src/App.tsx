@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 import './App.css';
-import { Navbar, Nav } from 'react-bootstrap'
+import { Navbar, Nav, NavItem } from 'react-bootstrap'
 import SensorTable from './SensorTable'
 import SensorMap from './SensorMap';
 import ParkMap from './ParkMap';
@@ -58,14 +58,14 @@ class App extends Component<{}, State> {
     return (
       <BrowserRouter>
         <div>
-          <Navbar  bg="primary">
+          <Navbar bg="primary">
             <Navbar.Brand href="/">Sensorit - Smart Salonki</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
-                <Nav.Link href="table">Sensoritaulukko</Nav.Link>
-                <Nav.Link href="map">Ilmanlaatukartta</Nav.Link>
-                <Nav.Link href="park">Parkkipaikkakartta</Nav.Link>
+                <Nav.Link as={Link} to="/table">Sensoritaulukko</Nav.Link>
+                <Nav.Link as={Link} to="/map">Ilmanlaatukartta</Nav.Link>
+                <Nav.Link as={Link} to="/park">Parkkipaikkakartta</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
