@@ -16,6 +16,14 @@ const init = {
     zoom: 13
 }
 
+function getHots(data){
+    const res = [];
+    for (let index = 0; index < data.length; index++) {
+        res.push([data[index].lng,data[index].lat,data[index].ga]);
+    }
+    return res;
+}
+
 const SensorMap = ({ isLoading, data, error }) => (
 
     <Map  center={[init.lat, init.lng]} zoom={init.zoom} >
@@ -23,12 +31,18 @@ const SensorMap = ({ isLoading, data, error }) => (
             error ? error : (
                 <>
                     <HeatmapLayer
-                    fitBoundsOnLoad
-                    fitBoundsOnUpdate
-                    points={[[60.3851, 23.1214, "73"],[60.3803, 23.1321, "928"]]}
-                    longitudeExtractor={(m) => m[1]}
-                    latitudeExtractor={(m) => m[0]}
-                    intensityExtractor={(m) => parseFloat(m[2])} />
+                    fitBoundsOnLoad={true}
+                    fitBoundsOnUpdate={false}
+                    points={getHots(data)}
+                    gradient={ {0.1:'blue',
+                     0.5: 'orange',
+                     0.8: 'red' }}
+                    radius={50}
+                    longitudeExtractor={(m) => parseFloat(m[1])}
+                    latitudeExtractor={(m) => parseFloat(m[0])}
+                    intensityExtractor={(m) => parseFloat(m[2])}
+                    
+                    />
                     <TileLayer
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
@@ -46,5 +60,6 @@ const SensorMap = ({ isLoading, data, error }) => (
 
     </Map>
 );
+
 
 export default SensorMap;

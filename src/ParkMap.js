@@ -9,9 +9,9 @@ import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 // }
 
 const init = {
-    lat: 60.3846,
-    lng: 23.1286377,
-    zoom: 16
+    lat: 60.386,
+    lng: 23.123,
+    zoom: 15
 }
 
 const ParkMap = ({ isLoading, data, error }) => (
