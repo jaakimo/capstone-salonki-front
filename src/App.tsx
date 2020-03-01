@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
 import './App.css';
 import SensorTable from './SensorTable'
 import SensorMap from './SensorMap';
+import ParkMap from './ParkMap';
 
 
 class App extends Component {
@@ -17,7 +18,10 @@ class App extends Component {
                 <NavLink to="/table">Taulukko</NavLink>
               </li>
               <li>
-                <NavLink to="/map">Kartta</NavLink>
+                <NavLink to="/map">Ilmanlaatukartta</NavLink>
+              </li>
+              <li>
+                <NavLink to="/park">Parkkipaikkakartta</NavLink>
               </li>
             </nav>
 
@@ -27,6 +31,7 @@ class App extends Component {
           <Switch>
             <Route path="/map" component={SensorMap} />
             <Route path="/table" component={SensorTable} />
+            <Route path="/park" component={ParkMap} />
           </Switch>
         </div>
       </BrowserRouter>
