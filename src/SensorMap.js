@@ -2,7 +2,6 @@ import React from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import HeatmapLayer from 'react-leaflet-heatmap-layer';
 
-import CustomMarker from './CustomMarker';
 
 
 // interface Props {
