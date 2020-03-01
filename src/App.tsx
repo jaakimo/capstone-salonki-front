@@ -5,6 +5,7 @@ import './App.css';
 import { Navbar, Nav } from 'react-bootstrap'
 import SensorTable from './SensorTable'
 import SensorMap from './SensorMap';
+import ParkMap from './ParkMap';
 
 interface State {
   data: Sensor[],
@@ -57,13 +58,14 @@ class App extends Component<{}, State> {
     return (
       <BrowserRouter>
         <div>
-          <Navbar bg="primary" variant="dark" >
+          <Navbar  bg="primary">
             <Navbar.Brand href="/">Sensorit - Smart Salonki</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
-                <Nav.Link href="map">Kartta</Nav.Link>
-                <Nav.Link href="table">Taulukko</Nav.Link>
+                <Nav.Link href="table">Sensoritaulukko</Nav.Link>
+                <Nav.Link href="map">Ilmanlaatukartta</Nav.Link>
+                <Nav.Link href="park">Parkkipaikkakartta</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
@@ -72,6 +74,7 @@ class App extends Component<{}, State> {
           <Switch>
             <Route path="/map" render={() => <SensorMap {...this.state} />} />
             <Route path="/table" render={() => <SensorTable {...this.state} />} />
+            <Route path="/park" render={() => <ParkMap/>} />
           </Switch>
         </div>
       </BrowserRouter>
