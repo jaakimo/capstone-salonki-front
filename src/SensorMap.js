@@ -1,5 +1,6 @@
 import React from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import HeatmapLayer from 'react-leaflet-heatmap-layer';
 
 import CustomMarker from './CustomMarker';
 
@@ -22,6 +23,13 @@ const SensorMap = ({ isLoading, data, error }) => (
         {
             error ? error : (
                 <>
+                    <HeatmapLayer
+                    fitBoundsOnLoad
+                    fitBoundsOnUpdate
+                    points={[[60.3851, 23.1214, "73"],[60.3803, 23.1321, "928"]]}
+                    longitudeExtractor={(m) => m[1]}
+                    latitudeExtractor={(m) => m[0]}
+                    intensityExtractor={(m) => parseFloat(m[2])} />
                     <TileLayer
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
