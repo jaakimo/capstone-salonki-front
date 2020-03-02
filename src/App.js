@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import { Navbar, Nav} from 'react-bootstrap'
 
 import './App.css';
+import FrontPage from './FrontPage'
 import SensorTable from './SensorTable'
 import SensorMap from './SensorMap';
 import ParkMap from './ParkMap';
@@ -98,7 +99,7 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <Navbar bg="primary">
-            <Navbar.Brand href="/">Sensorit - Smart Salonki</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/">Sensorit - Smart Salonki</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
@@ -114,6 +115,8 @@ class App extends Component {
             <Route path="/map" render={() => <SensorMap {...this.state.sensors} />} />
             <Route path="/table" render={() => <SensorTable {...this.state.sensors} />} />
             <Route path="/park" render={() => <ParkMap {...this.state.parkspots} />} />
+            
+            <Route path="" render={() => <FrontPage />}/>
           </Switch>
         </div>
       </BrowserRouter>
