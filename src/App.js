@@ -12,7 +12,7 @@ import ParkMap from './ParkMap';
 
 class App extends Component {
   state = {
-    sensor: {
+    sensors: {
       isLoading: true,
       data: [],
       error: null
@@ -97,8 +97,8 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
-          <Navbar bg="primary">
+        <nav class='App-nav'>
+          <Navbar >
             <Navbar.Brand as={Link} to="/">Sensorit - Smart Salonki</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -116,9 +116,9 @@ class App extends Component {
             <Route path="/table" render={() => <SensorTable {...this.state.sensors} />} />
             <Route path="/park" render={() => <ParkMap {...this.state.parkspots} />} />
             
-            <Route path="" render={() => <FrontPage />}/>
+            <Route path="" render={() => <FrontPage {...this.state.sensors}/>}/>
           </Switch>
-        </div>
+        </nav>
       </BrowserRouter>
 
 
